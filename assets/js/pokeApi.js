@@ -32,7 +32,7 @@ function displayPokemon(pokemon) {
   pokemonWeight.innerText = `Weight: ${pokemon?.weight}`;
   pokemonHeight.innerText = `Height: ${pokemon?.height}`;
   pokemonId.innerText = `#${pokemon?.id}`;
-
+  console.log(pokemon.sprites.other.showdown.front_default)
   pokemonTypes.innerHTML = '';
   pokemon.abilities.forEach(ability => {
     const li = document.createElement('li');
@@ -49,7 +49,7 @@ function displayPokemon(pokemon) {
     pokemonAbilities.appendChild(li);
   });
 
-  pokemonPicture.src = statusCheck ?  pokemon?.sprites?.front_shiny : pokemon?.sprites?.front_default || './assets/img/pokeball.png';
+  pokemonPicture.src = statusCheck ?  pokemon?.sprites?.other.showdown.front_shiny : pokemon?.sprites?.other.showdown.front_default || './assets/img/pokeball.png';
 }
 
 // Function pour fetch le precedent Pokemon
