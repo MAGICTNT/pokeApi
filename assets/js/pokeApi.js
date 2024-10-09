@@ -57,6 +57,7 @@ async function fetchPreviousPokemon() {
   if (currentPokemonId > 1) {
     const previousPokemon = await fetchPokemon(currentPokemonId - 1);
     if (previousPokemon) displayPokemon(previousPokemon);
+    playSound(previousPokemon);
   }
 }
 
@@ -64,14 +65,20 @@ async function fetchPreviousPokemon() {
 async function fetchNextPokemon() {
   const nextPokemon = await fetchPokemon(currentPokemonId + 1);
   if (nextPokemon) displayPokemon(nextPokemon);
+  playSound(nextPokemon);
 }
 
 // Search event handler
 searchForm.addEventListener('submit', async (e) => {
   e.preventDefault();
+
+
   const input = searchInput.value.trim().toLowerCase();
   const pokemon = await fetchPokemon(input);
   if (pokemon) displayPokemon(pokemon);
+
+  playSound(pokemon);
+
 });
 
 // precedent button event handler
@@ -103,6 +110,11 @@ radioShiny.addEventListener('click', async () => {
   const pokemon = await fetchPokemon(currentPokemonId);
   if (pokemon) displayPokemon(pokemon);
 
+  playSound(pokemon);
 });
 
 
+function playSound(pokemon){
+  let audio = new Audio(pokemon.cries.latest);
+  audio.play();
+}
