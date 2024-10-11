@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercice 34</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <script type="module" src="assets/js/pokeApi.js"></script>
-  </head>
-  <body>
-    <header>
-      <img src="./assets/img/pokeapi_256.png" alt="PokeAPI Logo" />
-
-      <div>
-        <input name="shinyCheckbox" id="shinyCheckbox" type="checkbox">
-        <label  >shiny</label>
-      </div>
-      <form action="#" id="pokemon-search">
-        <input
-          type="text"
-          placeholder="Nom ou Numéro de Pokédex national"
-          id="search-input"
-        />
-        <button id="searchButton">Search</button>
-      </form>
-    </header>
-    <main>
-      <button id="pokemon-previous" >&lt;&lt;</button>
-      <div id="pokemon-display">
-        <img
-          id="pokemon-picture"
-          src="./assets/img/pokeball.png"
-          alt="Pokemon Sprite"
-        />
-
-        <span id="pokemon-name">NAME</span><span id="pokemon-id"></span>
-        <span id="pokemon-weight">WEIGHT</span>
-        <span id="pokemon-height">HEIGHT</span>
-        <ul id="pokemon-types"></ul>
-        <ul id="pokemon-abilities"></ul>
-      </div>
-      <button id="pokemon-next" >&gt;&gt;</button>
-    </main>
-
-    <script src="assets/js/signature.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercice 34</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/buttonNav.css"/>
+  <link rel="stylesheet" href="./assets/css/nav.css"/> <!-- Ajout du fichier CSS de navigation -->
+  <script type="module" src="assets/js/pokeApi.js"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <button>
+      <a href="types.html">Recherche par types</a>
+    </button>
+    <button>
+      <a href="capacity.html">Recherche par capacités</a>
+    </button>
+  </nav>
+</header>
+<header>
+  <img src="./assets/img/pokeapi_256.png" alt="PokeAPI Logo" />
+  <div>
+    <input name="shinyCheckbox" id="shinyCheckbox" type="checkbox">
+    <label for="shinyCheckbox">Shiny</label>
+  </div>
+  <form action="#" id="pokemon-search">
+    <input
+      type="text"
+      placeholder="Nom ou Numéro de Pokédex national"
+      id="search-input"
+    />
+    <button id="searchButton">Search</button>
+  </form>
+</header>
+<main>
+  <button id="pokemon-previous">&lt;&lt;</button>
+  <div id="pokemon-display">
+    <img
+      id="pokemon-picture"
+      src="./assets/img/pokeball.png"
+      alt="Pokemon Sprite"
+    />
+    <span id="pokemon-name">NAME</span><span id="pokemon-id"></span>
+    <span id="pokemon-weight">WEIGHT</span>
+    <span id="pokemon-height">HEIGHT</span>
+    <ul id="pokemon-types"></ul>
+    <ul id="pokemon-abilities"></ul>
+  </div>
+  <button id="pokemon-next">&gt;&gt;</button>
+</main>
+<script src="assets/js/signature.js"></script>
+</body>
 </html>

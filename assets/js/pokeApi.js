@@ -40,7 +40,7 @@ function displayPokemon(pkData){
   pokemon.abilities.forEach(ability => {
     const li = document.createElement('li');
     li.innerText = ability;
-    li.addEventListener('click', () => console.log(ability));
+    li.addEventListener('click', () => fetchPokemonByAbility(ability));
     pokemonTypes.appendChild(li);
   });
 
@@ -49,7 +49,7 @@ function displayPokemon(pkData){
   pokemon.types.forEach(type => {
     const li = document.createElement("li");
     li.innerText = type;
-    li.addEventListener('click', () => console.log(type));
+    li.addEventListener('click', () => fetchPokemonByType(type));
   })
 }
 
@@ -88,6 +88,20 @@ radioShiny.addEventListener('click', async () => {
 
   playSound(pokemon);
 });
+
+async function fetchPokemonByType(type){
+  const response = await fetch("https://pokeapi.co/api/v2/type/${type}");
+  const data = await response.json();
+  const pokemonList = data.pokemon.map(p => p?.pokemon?.name).join(', ');
+  alert(`Pokémon avec le type ${type}: ${pokemonList}`);
+}
+
+async function fetchPokemonByAbility(ability) {
+  const response = await fetch(`https://pokeapi.co/api/v2/ability/${ability}`);
+  const data = await response.json();
+  const pokemonList = data.pokemon.map(p => p?.pokemon?.name).join(', ');
+  alert(`Pokémon avec l'abilité ${ability}: ${pokemonList}`);
+}
 
 function playSound(pokemon){
   console.log("sound : ")

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Type Search</title>
+  <script type="module" src="assets/js/pokeApiType.js"></script>
+  <link rel="stylesheet" href="./assets/css/type.css"/>
+  <link rel="stylesheet" href="./assets/css/buttonNav.css"/>
+</head>
+<body>
+<header>
+  <div>
+    <nav>
+      <button>
+        <a href="index.html">Recherche par nom</a>
+      </button>
+      <button>
+        <a href="capacity.html">Recherche par capacité</a>
+      </button>
+    </nav>
+  </div>
+</header>
+<section id="container">
+  <div id="search">
+    <section id="types">
+      <label for="option">Choisissez un type :</label>
+      <select id="option"></select>
+    </section>
+    <div id="optionShiny">
+      <input name="shinyCheckbox" id="shinyCheckbox" type="checkbox">
+      <label for="shinyCheckbox">Shiny</label>
+    </div>
+    <div>
+      <p><span id="countPoke">0</span> pokémons trouver</p>
+    </div>
+  </div>
+  <div id="listPokemon"></div>
+</section>
+</body>
+</html>

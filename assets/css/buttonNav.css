@@ -1,0 +1,35 @@
+/* Style des boutons de navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+button {
+  background-color: white;
+  color: #1c5db6; /* Bleu rappelant Pokémon */
+  border: 2px solid #1c5db6;
+  border-radius: 50px; /* Forme en pilule */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+button:hover {
+  background-color: #1c5db6;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Légère ombre au survol */
+}
+
+button:active {
+  background-color: #0d3d8c; /* Couleur plus foncée au clic */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Enfoncement visuel lors du clic */
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Garde la couleur du bouton */
+}
